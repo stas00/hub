@@ -73,7 +73,17 @@ install: bin/hub man-pages
 clean:
 	git clean -fdx bin share/man
 
-conda-build:
+conda-clean: ## remove conda build artifacts
+	@echo "\n\n*** conda build purge"
+	conda build purge-all
+	@echo "\n\n*** rm -fr conda-dist/"
+	rm -fr conda-dist/
+
+conda-build: ## build me
 	conda-build conda-recipe --output-folder conda-dist
 
-.PHONY: clean test test-all man-pages fmt install conda-build
+conda-upload: ## upload conda package
+	@echo "\n\n*** Uploading" conda-dist/*/*tar.bz2 "to anaconda.org\n"
+	anaconda upload conda-dist/noarch/*tar.bz2 -u YOUR_CONDA_USERNAME
+
+.PHONY: clean test test-all man-pages fmt install conda-clea conda-build conda-upload

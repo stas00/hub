@@ -1,9 +1,4 @@
 
-# XXX: need to extract from version/version.go
-# var Version = "2.5.1"
-# VERSION=`./script/version`
-# {% set version = "2.5.1" %}
-
 package:
   name: hub
   # this gives v2.5.1 - like version
@@ -29,6 +24,6 @@ test:
     - hub --version
 
 about:
-  home: XXX
-  license: XXX
-  summary: XXX
+  home: https://hub.github.com/
+  license: MIT
+  summary: hub helps you win at git

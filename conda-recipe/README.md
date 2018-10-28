@@ -18,7 +18,9 @@ cd hub
 make conda-build
 ```
 
-XXX: currently only unix is supported, someone with windows know-how and access, needs to port `build.sh` here.
+Hopefully it gets merged into https://github.com/github/hub.
+
+HELP NEEDED: currently only unix is supported, someone with windows know-how and access, needs to port `build.sh` here. It should take only a few minutes as it's just a few lines of code.
 
 
 ## To Install
@@ -35,4 +37,30 @@ and test:
 
 ```
 $ hub --version
+```
+
+## To upload to anaconda.org
+
+Prep:
+
+Register for free at https://anaconda.org/
+
+Upload:
+
+Either do it manually:
+
+```
+anaconda upload conda-dist/linux-64/hub-v2.5.1-1.tar.bz2
+```
+
+Or replace `YOUR_CONDA_USERNAME` inside `Makefile`, and then run:
+
+```
+make conda-upload
+```
+
+Then tell others that to install this package they need to know your channel name, so the installation command will be:
+
+```
+conda install hub -c YOUR_CONDA_USERNAME
 ```
