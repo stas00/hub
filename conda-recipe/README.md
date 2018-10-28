@@ -13,14 +13,14 @@ Build:
 
 For now, it's under this branch:
 ```
-git clone https://github.com/stas00/hub/tree/conda-build
+git clone -b conda-build https://github.com/stas00/hub
 cd hub
 make conda-build
 ```
 
 Hopefully it gets merged into https://github.com/github/hub.
 
-HELP NEEDED: currently only unix is supported, someone with windows know-how and access, needs to port `build.sh` here. It should take only a few minutes as it's just a few lines of code.
+HELP NEEDED: currently only unix is supported, someone with windows know-how and access, needs to port `build.sh` to `bld.bat` in this directory. It should take only a few minutes if you know what you're doing, as it's just a few lines of code.
 
 
 ## To Install
