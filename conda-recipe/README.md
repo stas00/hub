@@ -15,7 +15,7 @@ For now, it's under this branch:
 ```
 git clone https://github.com/stas00/hub/tree/conda-build
 cd hub
-conda-build conda-recipe --output-folder conda-dist
+make conda-build
 ```
 
 XXX: currently only unix is supported, someone with windows know-how and access, needs to port `build.sh` here.
@@ -36,13 +36,3 @@ and test:
 ```
 $ hub --version
 ```
-
-## Integration
-
-The `conda-build` target:
-
-```
-conda-build:
-	conda-build conda-recipe --output-folder conda-dist
-```
-can be added to hub's `Makefile` should they support it.

@@ -73,4 +73,7 @@ install: bin/hub man-pages
 clean:
 	git clean -fdx bin share/man
 
-.PHONY: clean test test-all man-pages fmt install
+conda-build:
+	conda-build conda-recipe --output-folder conda-dist
+
+.PHONY: clean test test-all man-pages fmt install conda-build
