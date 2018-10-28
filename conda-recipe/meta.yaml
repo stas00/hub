@@ -1,0 +1,34 @@
+
+# XXX: need to extract from version/version.go
+# var Version = "2.5.1"
+# VERSION=`./script/version`
+# {% set version = "2.5.1" %}
+
+package:
+  name: hub
+  # this gives v2.5.1 - like version
+  version: {{ GIT_DESCRIBE_TAG }}
+  # XXX: to get the real current version, since the tag could be older, use:
+  # version: {{ environ.get('HUB_VERSION', '') }}
+  # and then use this to build the conda-package
+  # HUB_VERSION=`grep Version version/version.go | head -1 | cut -d '"' -f2` conda-build ...
+
+source:
+  path: ..
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - cmake
+    - go
+
+test:
+  commands:
+    - hub --version
+
+about:
+  home: XXX
+  license: XXX
+  summary: XXX
